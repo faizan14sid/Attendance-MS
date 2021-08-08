@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
 const app = express();
 
 // connecting the database
-const db = require('./db');
+import { db } from './db.js'
 
 app.use(express.json());
 
