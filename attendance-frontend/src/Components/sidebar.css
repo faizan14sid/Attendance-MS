@@ -2,32 +2,26 @@
     color: white;
     flex: 0.3;
     background-color: darkslategrey;
-    border-top: 1px solid #49274b;
+    border: 1px solid white;
     max-width: 260px;
+    
   }
   .sidebar > hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #49274b;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid white;
   }
   .sidebar_header {
     padding: 13px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #49274b;
+    border-bottom: 1px solid white;
     display: flex;
-  }
-  .sidebar_header > .MuiSvgIcon-root {
-    padding: 8px;
-    color: #49274b;
-    font-size: 18px;
-    background-color: white;
-    border-radius: 999px;
   }
   .sidebar_info {
     flex: 1;
   }
   .sidebar_info > h2 {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 800;
     margin-bottom: 5px;
     margin-top: 1px;

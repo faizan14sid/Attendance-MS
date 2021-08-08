@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
 
-import { createClass } from '../controllers/class.js';
+import { viewClass, addClass } from '../controllers/class.js';
 
-
-router.post('/class', createClass);
+router.post('/addClass', addClass);
+router.get('/viewClass', viewClass);
 
 
 

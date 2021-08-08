@@ -1,6 +1,9 @@
 import express from 'express';
 import classRoute from './routes/class.js'
+import cors from 'cors';
+
 const app = express();
+app.use(cors())
 
 // connecting the database
 import { db } from './db.js'

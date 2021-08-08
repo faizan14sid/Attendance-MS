@@ -6,13 +6,12 @@ export const Header = () => {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
+
                 <Navbar.Brand href="#home">Attendance</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
 
-                    </Nav>
-                    <Nav>
+                    <Nav className="me-auto">
                         <NavDropdown title="Students" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Rohit</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">faizan</NavDropdown.Item>
@@ -28,6 +27,7 @@ export const Header = () => {
                             <NavDropdown.Item href="#action/3.4">Add Teacher</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
