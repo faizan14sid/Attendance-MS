@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 // const {ObjectId} = mongoose.Schema.Types
 const classSchema = new mongoose.Schema({
-    Class: {
+    class: {
         type: String,
         required: true,
     },
-    ClassTeacher: {
+    classTeacher: {
         type: String,
         required: true,
     },
@@ -13,7 +13,6 @@ const classSchema = new mongoose.Schema({
 });
 
 // creating class model
-mongoose.model('class', classSchema);  // defines collection name where we will insert this all data
+var ClassModel = mongoose.model('class', classSchema);  // defines collection name where we will insert this all data
 
-// exporting the model
-module.exports = mongoose.model('class');
+export default ClassModel;

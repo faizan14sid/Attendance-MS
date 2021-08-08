@@ -1,5 +1,5 @@
 import express from 'express';
-
+import classRoute from './routes/class.js'
 const app = express();
 
 // connecting the database
@@ -17,8 +17,7 @@ app.use(express.json());
 // teacher routes
 // const teacherRoute = require('./routes/teacher');
 
-// class route
-// const classRoute = require('./routes/class');
+app.use('/', classRoute);
 
 // attendance route
 // const attendanceRoute = require('./routes/attendance');
