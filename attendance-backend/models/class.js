@@ -4,6 +4,7 @@ const classSchema = new mongoose.Schema({
     standard: {
         type: String,
         required: true,
+        unique: true,
     },
     classTeacher: {
         type: String,
@@ -12,7 +13,7 @@ const classSchema = new mongoose.Schema({
 
 });
 
-// creating class model
-var ClassModel = mongoose.model('class', classSchema);  // defines collection name where we will insert this all data
+
+var ClassModel = mongoose.model('class', classSchema);
 
 export default ClassModel;

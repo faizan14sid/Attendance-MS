@@ -1,5 +1,6 @@
 import express from 'express';
-import classRoute from './routes/class.js'
+import classRoute from './routes/class.js';
+import studentRoute from './routes/student.js';
 import cors from 'cors';
 
 const app = express();
@@ -13,12 +14,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 // app.use(express.urlencoded({ extended: true }));
 
-
-// student routes
-// const studentRoute = require('./routes/student');
-
-// teacher routes
-// const teacherRoute = require('./routes/teacher');
+app.use('/', studentRoute);
 
 app.use('/', classRoute);
 
