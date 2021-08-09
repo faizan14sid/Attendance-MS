@@ -12,7 +12,7 @@ router.get('/viewAllStudents', viewAllStudents);
 
 // view all student of a specific class 
 
-router.get('/view/:Class', viewClassStudents);
+router.get('/view/:standard', viewClassStudents);
 
 // add a student in a class
 router.put('/addStudent', addStudent);

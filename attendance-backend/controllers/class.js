@@ -58,7 +58,7 @@ export const addClass = (req, res) => {
 
 export const viewOneClass = async (req, res) => {
     try {
-        await Class.find({ _id: req.params._id }, (error, result) => {
+        await ClassModel.findOne({ _id: req.params._id }, (error, result) => {
             return res.json({
                 result: result
             });

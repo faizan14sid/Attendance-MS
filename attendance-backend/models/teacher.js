@@ -16,7 +16,7 @@ const teacherSchema = new mongoose.Schema({
     },
     standard: {
         type: ObjectId,
-        ref: 'class'
+        ref: 'standard'
     }
 
 

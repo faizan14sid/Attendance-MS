@@ -1,7 +1,7 @@
 import { Header } from './Components/Header';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Sidebar } from './Components/Sidebar';
+import { Class } from './Components/Class';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <h1>Class Attendance
       </h1>
       <Header />
-      <Sidebar />
+      <Class />
     </div>
   );
 }

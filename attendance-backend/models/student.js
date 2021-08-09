@@ -8,7 +8,7 @@ const studentSchema = new mongoose.Schema({
     },
     standard: {
         type: ObjectId,
-        ref: 'class'
+        ref: 'standard'
     },
     registration_no: {
         type: String,

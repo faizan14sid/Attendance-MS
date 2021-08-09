@@ -10,8 +10,10 @@ export const Header = () => {
                 <Navbar.Brand href="#home">Attendance</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-
                     <Nav className="me-auto">
+
+                    </Nav>
+                    <Nav >
                         <NavDropdown title="Students" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Rohit</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">faizan</NavDropdown.Item>
