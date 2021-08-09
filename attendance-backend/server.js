@@ -2,6 +2,7 @@ import express from 'express';
 import classRoute from './routes/class.js';
 import studentRoute from './routes/student.js';
 import teacherRoute from './routes/teacher.js';
+import attendanceRoute from './routes/attendance.js';
 import cors from 'cors';
 
 const app = express();
@@ -11,15 +12,16 @@ app.use(cors())
 import { db } from './db.js'
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// parse requests of content-type - application/x-www-form-urlencoded
-// app.use(express.urlencoded({ extended: true }));
 
 app.use('/student', studentRoute);
 
 app.use('/teacher', teacherRoute);
 
 app.use('/class', classRoute);
+
+app.use('/attendance', attendanceRoute);
 
 // attendance route
 // const attendanceRoute = require('./routes/attendance');

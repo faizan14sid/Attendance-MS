@@ -1,11 +1,10 @@
 import AttendanceRecordModel from '../models/attendance.js';
 
 
-exports.newAttendance = (req, res) => {
-    Attendance.create({
-        Class: req.body.Class,
-        Subject: req.body.Subject,
-        Teacher: req.body.Teacher
+export const newAttendance = (req, res) => {
+    AttendanceRecordModel.create({
+        standard: req.body.standard,
+        teacher: req.body.teacher
     }, (error, result) => {
         if (!error) {
             return res.json({
@@ -13,14 +12,15 @@ exports.newAttendance = (req, res) => {
                 result
             })
         }
+
     })
 }
 
-// get all attendance record of a specific class
+// view attendance record of a specific class
 
-exports.viewAttendance = async (req, res) => {
+export const viewAttendance = async (req, res) => {
     try {
-        await Attendance.find({ Class: req.params.Class }, (error, result) => {
+        await AttendanceRecordModel.find({ standard: req.params.standard }, (error, result) => {
             if (!error) {
                 return res.json({
                     result
@@ -35,21 +35,21 @@ exports.viewAttendance = async (req, res) => {
 
 // mark present 
 
-exports.markPresent = async (req, res) => {
+export const Present = async (req, res) => {
     try {
-        await Attendance.findOne({ _id: req.params._id }, (error, result) => {
+        await AttendanceRecordModel.findOne({ _id: req.params._id }, (error, result) => {
             if (result.Present.includes(req.body._id)) {
                 return res.json({
-                    message: 'Already Marked',
+                    message: 'Already present',
                     result
                 })
             }
 
             else {
-                Attendance.findByIdAndUpdate({ _id: req.params._id }, {
+                AttendanceRecordModel.findByIdAndUpdate({ _id: req.params._id }, {
                     $push: { Present: req.body._id }
                 }, { new: true }).exec((err, result) => {
-                    if (err) {        // executing the query
+                    if (err) {
                         return res.json(err);
                     }
                     else {
@@ -70,30 +70,34 @@ exports.markPresent = async (req, res) => {
     }
 }
 
-exports.markAbsent = async (req, res) => {
+// Mark absent
+
+export const Absent = async (req, res) => {
     try {
-        await Attendance.findOne({ _id: req.params._id }, (error, result) => {
+        await AttendanceRecordModel.findOne({ _id: req.params._id }, (error, result) => {
             if (result.Absent.includes(req.body._id)) {
                 return res.json({
-                    message: 'Already Marked',
+                    message: 'Already absent',
                     result
                 })
             }
 
             else {
-                Attendance.findByIdAndUpdate({ _id: req.params._id }, {
+                AttendanceRecordModel.findByIdAndUpdate({ _id: req.params._id }, {
                     $push: { Absent: req.body._id }
-                }, { new: true }).exec((err, result) => {
-                    if (err) {        // executing the query
-                        return res.json(err);
-                    }
-                    else {
-                        return res.json({
-                            message: 'Marked Absent',
-                            result
-                        });
-                    }
-                })
+                },
+                    { new: true })
+                    .exec((err, result) => {
+                        if (err) {
+                            return res.json(err);
+                        }
+                        else {
+                            return res.json({
+                                message: 'Marked Absent',
+                                result
+                            });
+                        }
+                    })
             }
 
         })

@@ -4,6 +4,7 @@ import ClassModel from '../models/class.js';
 export const viewClass = (req, res) => {
 
     ClassModel.find()
+        .sort("standard")
         .select(
             "standard classTeacher"
         )
