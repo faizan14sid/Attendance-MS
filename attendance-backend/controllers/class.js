@@ -53,3 +53,18 @@ export const addClass = (req, res) => {
         }
     })
 }
+
+// view one class
+
+export const viewOneClass = async (req, res) => {
+    try {
+        await Class.find({ _id: req.params._id }, (error, result) => {
+            return res.json({
+                result: result
+            });
+        })
+    }
+    catch (err) {
+        return res.send('error' + err);
+    }
+}

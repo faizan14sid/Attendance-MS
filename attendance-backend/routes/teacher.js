@@ -15,7 +15,7 @@ router.get('/viewAllTeachers', viewAllTeachers);
 router.put('/addteacher', addTeacher);
 
 // view all teachers of a class
-router.get('/view/:Class', viewClassTeachers);
+router.get('/view/:standard', viewClassTeachers);
 
 
 export default router;
