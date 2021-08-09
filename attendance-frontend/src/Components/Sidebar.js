@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./class.css";
+import "./sidebar.css";
 import axios from 'axios';
+import { AddClass } from './Class/AddClass'
+import { Link } from "react-router-dom";
 
-import { AddClass } from './AddClass'
-
-export const Class = () => {
+export const Sidebar = () => {
     const [classList, setClassList] = useState([]);
 
 
@@ -33,7 +33,7 @@ export const Class = () => {
             {classList.map((list, index) => {
                 return (
 
-                    <h4> <hr />{list.standard}</h4>
+                    <h4> <hr /><Link style={{ color: "inherit", textDecoration: "inherit" }} to={`/class/${list._id}`}>{list.standard}</Link></h4>
                 )
             })}
             <hr />

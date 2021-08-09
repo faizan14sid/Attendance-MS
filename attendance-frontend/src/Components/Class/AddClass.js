@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-
+import { useHistory } from 'react-router-dom';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import AddIcon from "@material-ui/icons/Add";
@@ -13,6 +13,7 @@ export const AddClass = () => {
     const [open, setOpen] = useState(false);
     const [standard, setStandard] = useState("");
     const [classTeacher, setClassTeacher] = useState("");
+    const history = useHistory();
 
     const handleOpen = () => {
         setOpen(true);
@@ -41,6 +42,7 @@ export const AddClass = () => {
         }
         else {
             window.alert("class added successfully");
+            history.push('/')
 
         }
         setOpen(false);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
     return (
@@ -7,7 +8,7 @@ export const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
 
-                <Navbar.Brand href="#home">Attendance</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/viewattendance">View Attendance</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -15,18 +16,14 @@ export const Header = () => {
                     </Nav>
                     <Nav >
                         <NavDropdown title="Students" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Rohit</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">faizan</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Naman</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/viewallstudents" >View All Students</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Add Stundent</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/addnewstudent">Add New Stundent</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Teachers" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Mr. Saurabh</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Miss. Manila</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Mr. Sanjya</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/viewallteachers">View All Teachers</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Add Teacher</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/addnewteacher">Add New Teacher</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
