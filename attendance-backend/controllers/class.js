@@ -46,7 +46,7 @@ export const addClass = (req, res) => {
 
         }
         else {
-            res.status(200).send({
+            res.status(422).send({
                 message: "Class already exist"
             })
 

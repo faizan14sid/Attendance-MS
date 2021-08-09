@@ -24,7 +24,7 @@ export const AddClass = () => {
 
     const addClass = async () => {
 
-        const res = await fetch('/addClass', {
+        const res = await fetch('/class/addClass', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -37,7 +37,7 @@ export const AddClass = () => {
         const data = res.json();
 
         if (res.status === 422 || !data || !standard) {
-            window.alert("Invalid class")
+            window.alert("Invalid class or already exist")
         }
         else {
             window.alert("class added successfully");

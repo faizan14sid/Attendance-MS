@@ -10,7 +10,7 @@ export const Sidebar = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:8000/viewClass")
+        axios.get("http://localhost:8000/class/viewClass")
             .then((response) => {
                 setClassList(response.data)
                 console.log(response.data)

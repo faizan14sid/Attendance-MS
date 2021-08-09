@@ -11,6 +11,8 @@ const classSchema = new mongoose.Schema({
         required: true,
     },
 
+}, {
+    timestamps: true
 });
 
 

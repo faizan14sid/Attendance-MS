@@ -1,16 +1,17 @@
 import mongoose from 'mongoose';
 const { ObjectId } = mongoose.Schema.Types;
 const studentSchema = new mongoose.Schema({
-    stundentName: {
+    studentName: {
         type: String,
-        required: true,
+        required: true
+
     },
     standard: {
         type: ObjectId,
         ref: 'class'
     },
-    roll_no: {
-        type: Number,
+    registration_no: {
+        type: String,
         unique: true,
         required: true
     },
@@ -18,6 +19,8 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+}, {
+    timestamps: true
 });
 
 var StudentModel = mongoose.model('student', studentSchema);
