@@ -61,7 +61,7 @@ export const AddClass = () => {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="class"
+                        id="name"
                         label="class"
                         value={standard}
                         onChange={(e) => setStandard(e.target.value)}
@@ -70,7 +70,7 @@ export const AddClass = () => {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="classTeacher"
+                        id="name"
                         label="Class Teacher"
                         value={classTeacher}
                         onChange={(e) => setClassTeacher(e.target.value)}

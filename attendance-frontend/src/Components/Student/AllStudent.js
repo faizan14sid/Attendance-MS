@@ -11,7 +11,7 @@ export const AllStudent = () => {
             .then((response) => {
                 setAllStudent(response.data)
                 console.log(response.data)
-                console.log(allStudent)
+
             })
             .catch(error => console.error(`Error: ${error}`));
     }, [])
