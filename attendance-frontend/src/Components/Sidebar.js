@@ -33,7 +33,7 @@ export const Sidebar = () => {
             {classList.map((list, index) => {
                 return (
 
-                    <h4> <hr /><Link style={{ color: "inherit", textDecoration: "inherit" }} to={`/class/${list._id}`}>{list.standard}</Link></h4>
+                    <h4> <hr /><Link style={{ color: "inherit", textDecoration: "inherit" }} to={{ pathname: "/class/view", state: { detail: list } }}>{list.standard}</Link></h4>
                 )
             })}
             <hr />

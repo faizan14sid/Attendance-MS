@@ -16,7 +16,7 @@ export const Home = () => {
                 <Route exact path='/addclass'>
                     <AddClass />
                 </Route>
-                <Route path='/class/:classid'>
+                <Route path='/class/view'>
                     <Class />
                 </Route>
 

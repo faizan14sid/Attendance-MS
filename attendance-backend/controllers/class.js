@@ -13,7 +13,7 @@ export const viewClass = (req, res) => {
 
             res.send(data)
         })
-        .catch((er) => {
+        .catch((err) => {
             res.status(500).json({
                 message: er.message,
             });
