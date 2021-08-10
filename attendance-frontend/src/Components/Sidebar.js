@@ -41,7 +41,7 @@ export const Sidebar = () => {
             <hr />
 
 
-        </div>
+        </div >
     )
 
 };
