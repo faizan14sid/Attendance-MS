@@ -7,6 +7,7 @@ import { ViewAttendance } from './Attendance/ViewAttendance';
 import { Class } from './Class/Class';
 import { AllTeacher } from './Teacher/AllTeacher';
 import { AllStudent } from './Student/AllStudent';
+import { ViewStudents } from './Class/ViewStudents';
 
 
 export const Home = () => {
@@ -18,6 +19,9 @@ export const Home = () => {
                 </Route>
                 <Route path='/class/view'>
                     <Class />
+                </Route>
+                <Route path='/viewstudents'>
+                    <ViewStudents />
                 </Route>
 
                 <Route exact path='/viewallstudents'>

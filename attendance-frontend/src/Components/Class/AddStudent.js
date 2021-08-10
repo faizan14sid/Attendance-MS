@@ -8,11 +8,9 @@ import { useHistory } from 'react-router-dom';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-export const Student = () => {
+export const AddStudent = ({ list }) => {
     const [open, setOpen] = useState(false);
-    const [studentName, setStudentName] = useState("");
     const [registration_no, setRegistration_no] = useState("");
-    const [password, setPassword] = useState("");
     const history = useHistory();
 
     const handleOpen = () => {
@@ -25,25 +23,25 @@ export const Student = () => {
 
     const addStudent = async () => {
 
-        const res = await fetch('/student/registerStudent', {
-            method: "POST",
+        const res = await fetch('/student/addStudent', {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                studentName,
+
                 registration_no,
-                password
+                standard: list._id
 
             })
         });
         const data = res.json();
 
-        if (res.status === 422 || !data || !registration_no || !studentName) {
+        if (res.status === 422 || !data || !registration_no) {
             window.alert("Invalid student or already exist")
         }
         else {
-            window.alert("student register successfully");
+            window.alert("student added in class successfully");
             history.push('/')
 
         }
@@ -55,36 +53,18 @@ export const Student = () => {
     return (
         <div >
             <Button variant="contained" color="secondary" onClick={handleOpen}>
-                Student Registration
+                Add Student
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title"> Register New Student </DialogTitle>
+                <DialogTitle id="form-dialog-title"> Please add student in class </DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
                         margin="dense"
                         id="name"
-                        label="Student Name"
-                        value={studentName}
-                        onChange={(e) => setStudentName(e.target.value)}
-                        fullWidth
-                    />
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="registration_no"
-                        label="Registration No"
+                        label="Student Registration No"
                         value={registration_no}
                         onChange={(e) => setRegistration_no(e.target.value)}
-                        fullWidth
-                    />
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="password"
-                        label="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
                         fullWidth
                     />
                 </DialogContent>

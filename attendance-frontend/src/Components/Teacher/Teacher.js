@@ -55,7 +55,7 @@ export const Teacher = () => {
     return (
         <div >
             <Button variant="contained" color="secondary" onClick={handleOpen}>
-                Add New Teacher
+                Teacher Registration
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title"> Register New Teacher </DialogTitle>
