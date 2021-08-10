@@ -1,31 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ListGroup } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 export const AllStudent = () => {
-    const [studentList, setStudentList] = useState([]);
+    const [allStudent, setAllStudent] = useState([]);
 
     useEffect(() => {
 
         axios.get("http://localhost:8000/student/viewAllStudents")
             .then((response) => {
-                setStudentList(response.data)
+                setAllStudent(response.data)
                 console.log(response.data)
-                console.log(studentList)
+                console.log(allStudent)
             })
             .catch(error => console.error(`Error: ${error}`));
     }, [])
 
     return (
         <div>
-            {studentList && studentList.map((list, index) => {
-                return (
-                    <ListGroup>
-                        <ListGroup.Item>{list.studentName}</ListGroup.Item>
-                    </ListGroup>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>S.No:</th>
+                        <th>Student Name</th>
+                        <th>Registration No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allStudent.map((list, index) => {
+                        return (
 
-                )
-            })}
+                            <tr>
+                                <td>{index}</td>
+                                <td>{list.studentName}</td>
+                                <td>{list.registration_no}</td>
+                            </tr>
+                        )
+                    })}
+
+                </tbody>
+            </Table>
 
 
         </div>

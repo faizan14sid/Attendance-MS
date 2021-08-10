@@ -38,18 +38,21 @@ export const registerStudent = (req, res) => {
 // view all student
 
 export const viewAllStudents = async (req, res) => {
-    try {
-        await StudentModel.find({}, (error, result) => {
-            if (!error) { //if no error
-                return res.json({
-                    result
-                })
-            }
+    StudentModel.find()
+        .sort("studentName")
+        .select(
+            "studentName registration_no"
+        )
+        .exec()
+        .then((data) => {
+
+            res.send(data)
         })
-    }
-    catch (err) {
-        return res.send('error' + err);
-    }
+        .catch((er) => {
+            res.status(500).json({
+                message: er.message,
+            });
+        });
 }
 
 

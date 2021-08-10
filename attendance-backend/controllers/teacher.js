@@ -37,18 +37,21 @@ export const registerTeacher = (req, res) => {
 // view all teacher
 
 export const viewAllTeachers = async (req, res) => {
-    try {
-        await TeacherModel.find({}, (error, result) => {
-            if (!error) { //if no error
-                return res.json({
-                    result
-                })
-            }
+    TeacherModel.find()
+        .sort("teacherName")
+        .select(
+            "teacherName registration_no"
+        )
+        .exec()
+        .then((data) => {
+
+            res.send(data)
         })
-    }
-    catch (err) {
-        return res.send('error' + err);
-    }
+        .catch((er) => {
+            res.status(500).json({
+                message: er.message,
+            });
+        });
 }
 
 

@@ -14,7 +14,7 @@ export const Sidebar = () => {
             .then((response) => {
                 setClassList(response.data)
                 console.log(response.data)
-                console.log(classList)
+
             })
             .catch(error => console.error(`Error: ${error}`));
     }, [])

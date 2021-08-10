@@ -17,8 +17,6 @@ function App() {
           <div style={{ width: "20%" }}>
             <Sidebar />
           </div>
-
-
           <div style={{ width: "100%" }}>
             <Home />
           </div>
