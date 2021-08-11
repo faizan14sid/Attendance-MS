@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Class } from './Class';
 import { Table, Button } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 
 export const TakeAttendance = () => {
 
     const location = useLocation();
+    const history = useHistory();
     const list = location.state.detail;
     const [student, setStudent] = useState([]);
     const attData = JSON.parse(localStorage.getItem('attData'));
@@ -58,6 +59,11 @@ export const TakeAttendance = () => {
             })
     }
 
+    const handleSubmit = () => {
+        localStorage.clear();
+        history.push('/')
+    }
+
     return (
         <div>
             <Class />
@@ -87,7 +93,7 @@ export const TakeAttendance = () => {
                     })}
                 </tbody>
             </Table>
-            <Button variant="primary">Submit</Button>
+            <Button variant="primary" onClick={handleSubmit}>Submit</Button>
         </div>
     )
 }

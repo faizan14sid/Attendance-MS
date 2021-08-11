@@ -27,7 +27,7 @@ export const AllStudent = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {allStudent.map((list, index) => {
+                    {allStudent && allStudent.map((list, index) => {
                         return (
 
                             <tr>

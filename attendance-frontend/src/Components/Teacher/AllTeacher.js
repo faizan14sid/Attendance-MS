@@ -26,7 +26,7 @@ export const AllTeacher = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {allTeacher.map((list, index) => {
+                    {allTeacher && allTeacher.map((list, index) => {
                         return (
 
                             <tr>

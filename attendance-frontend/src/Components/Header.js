@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import { ViewAttendance } from './Attendance/ViewAttendance';
 import { Student } from './Student/Student';
 import { Teacher } from './Teacher/Teacher';
 
@@ -10,7 +11,7 @@ export const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
 
-                <Navbar.Brand as={Link} to="/viewattendance">View Attendance</Navbar.Brand>
+                <Navbar.Brand><ViewAttendance /> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
