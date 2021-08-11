@@ -1,18 +1,16 @@
 import React from "react";
-
 import { useLocation, Link } from "react-router-dom";
-import { Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { AddStudent } from "./AddStudent";
 import { AddTeacher } from "./AddTeacher";
+import { Attendance } from "./Attendance";
 
 
 export const Class = () => {
 
-    // const { classid } = useParams();
+
     const location = useLocation();
     const list = location.state.detail;
-
-    // const [classData, setClassData] = useState([]);
 
 
     return (
@@ -21,9 +19,9 @@ export const Class = () => {
             <div style={{ display: 'flex', justifyContent: "space-evenly", margin: "5px" }}>
                 <h3>Class: {list.standard} Dashboard</h3>
                 <h5 >ClassTeacher: {list.classTeacher}</h5>
-                <Button variant="danger">Take Attendance</Button>
+                <Attendance list={list} />
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle variant="dark" id="dropdown-basic">
                         Students
                     </Dropdown.Toggle>
 
@@ -35,7 +33,7 @@ export const Class = () => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle variant="dark" id="dropdown-basic">
                         Teachers
                     </Dropdown.Toggle>
 

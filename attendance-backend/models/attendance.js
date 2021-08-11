@@ -3,10 +3,12 @@ const { ObjectId } = mongoose.Schema.Types
 const attendanceSchema = new mongoose.Schema({
     standard: {
         type: ObjectId,
+        require: true,
         ref: 'standard'
     },
     teacher: {
-        type: String
+        type: String,
+        require: true
     },
     Present: [
         {
