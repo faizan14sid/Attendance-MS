@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import { AddClass } from './Class/AddClass';
-
+import { ViewTeachers } from './Class/ViewTeachers';
 import { Attendance } from './Attendance/Attendance';
 import { ViewAttendance } from './Attendance/ViewAttendance';
 import { Class } from './Class/Class';
@@ -22,6 +22,9 @@ export const Home = () => {
                 </Route>
                 <Route path='/viewstudents'>
                     <ViewStudents />
+                </Route>
+                <Route path='/viewteachers'>
+                    <ViewTeachers />
                 </Route>
 
                 <Route exact path='/viewallstudents'>

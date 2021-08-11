@@ -6,8 +6,7 @@ const attendanceSchema = new mongoose.Schema({
         ref: 'standard'
     },
     teacher: {
-        type: ObjectId,
-        ref: 'teacher'
+        type: String
     },
     Present: [
         {

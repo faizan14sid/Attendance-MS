@@ -18,14 +18,14 @@ export const Header = () => {
                     </Nav>
                     <Nav >
                         <NavDropdown title="Students" id="collasible-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/viewallstudents" >View All Students</NavDropdown.Item>
-                            <NavDropdown.Divider />
                             <NavDropdown.Item as={Link} to="/addnewstudent"><Student /></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item as={Link} to="/viewallstudents" >View All Students</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Teachers" id="collasible-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/viewallteachers">View All Teachers</NavDropdown.Item>
-                            <NavDropdown.Divider />
                             <NavDropdown.Item as={Link} to="/addnewteacher"><Teacher /> </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item as={Link} to="/viewallteachers">View All Teachers</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 

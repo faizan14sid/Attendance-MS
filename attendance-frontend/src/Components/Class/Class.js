@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Button, Dropdown } from "react-bootstrap";
 import { AddStudent } from "./AddStudent";
+import { AddTeacher } from "./AddTeacher";
 
 
 export const Class = () => {
@@ -22,7 +23,7 @@ export const Class = () => {
                 <h5 >ClassTeacher: {list.classTeacher}</h5>
                 <Button variant="danger">Take Attendance</Button>
                 <Dropdown>
-                    <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
                         Students
                     </Dropdown.Toggle>
 
@@ -34,13 +35,13 @@ export const Class = () => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
-                    <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
                         Teachers
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item >Add Teacher in class</Dropdown.Item>
-                        <Dropdown.Item >Class Teachers in class</Dropdown.Item>
+                        <Dropdown.Item ><AddTeacher list={list} /></Dropdown.Item>
+                        <Dropdown.Item as={Link} to={{ pathname: "/viewteachers", state: { detail: list } }}>View Teachers in class</Dropdown.Item>
 
 
                     </Dropdown.Menu>
